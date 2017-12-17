@@ -1,7 +1,7 @@
 package iterator
 
-// Iterator is an interface for iterator
-type Iterator interface {
+// Interface is an interface for iterator
+type Interface interface {
 	// Next should return the next element
 	Next() interface{}
 	// HasNext should return true if we have next element
