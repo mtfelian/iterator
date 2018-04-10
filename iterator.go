@@ -10,4 +10,6 @@ type Interface interface {
 	I() int
 	// Add should add c to an underlying storage
 	Add(c interface{})
+	// SetI should set an iteration index to i
+	SetI(i int)
 }

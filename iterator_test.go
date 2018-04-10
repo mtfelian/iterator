@@ -30,6 +30,9 @@ func (d *BasePairs) HasNext() bool { return d.i < len(d.slice) }
 // I returns a current iteration index
 func (d *BasePairs) I() int { return d.i - 1 }
 
+// SetI sets a current iteration index
+func (d *BasePairs) SetI(i int) { d.i = i }
+
 // Add adds an element to an underlying slice
 func (d *BasePairs) Add(c interface{}) { d.slice = append(d.slice, c.(IPair)) }
 
@@ -63,6 +66,7 @@ func TestIterator(t *testing.T) {
 
 	func(over Interface) {
 		i := 0
+		over.SetI(0)
 		for over.HasNext() {
 			nextElement := over.Next().(Pair)
 			if over.I() != i {
